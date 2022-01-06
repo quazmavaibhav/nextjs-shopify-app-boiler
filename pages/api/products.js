@@ -1,10 +1,12 @@
-import Shopify, {context} from '@lib/shopify'
+import Shopify, { context } from "@lib/shopify";
 
 export default async (req, res) => {
   // Provide HOST_NAME here just in case it was not provided by env variable
   // This might occur during the first deploy to Vercel when you don't yet know
   // what domain your app is being hosted on
-  Shopify.Context.update({ HOST_NAME: req.headers.host});
+  Shopify.Context.update({
+    HOST_NAME: "https://8a5c-2405-201-300b-e820-1099-e773-eaab-12e8.ngrok.io",
+  });
 
   const session = await Shopify.Utils.loadCurrentSession(req, res);
   const client = new Shopify.Clients.Graphql(session.shop, session.accessToken);
@@ -26,14 +28,14 @@ export default async (req, res) => {
       }
     }
   }
-}`
+}`,
   });
 
-  res.status(200).json(products)
-}
+  res.status(200).json(products);
+};
 
 export const config = {
   api: {
     bodyParser: false,
   },
-}
+};

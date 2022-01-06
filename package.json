@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@prisma/client": "^3.7.0",
     "@shopify/admin-graphql-api-utilities": "^1.0.1",
     "@shopify/app-bridge": "^2.0.3",
     "@shopify/app-bridge-react": "^2.0.3",
@@ -22,5 +23,8 @@
     "react-apollo": "^3.1.5",
     "react-dom": "17.x",
     "redis-server": "^1.2.2"
+  },
+  "devDependencies": {
+    "prisma": "^3.7.0"
   }
 }

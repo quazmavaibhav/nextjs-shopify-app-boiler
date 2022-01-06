@@ -337,6 +337,23 @@
   dependencies:
     "@napi-rs/triples" "^1.0.3"
 
+"@prisma/client@^3.7.0":
+  "integrity" "sha512-fUJMvBOX5C7JPc0e3CJD6Gbelbu4dMJB4ScYpiht8HMUnRShw20ULOipTopjNtl6ekHQJ4muI7pXlQxWS9nMbw=="
+  "resolved" "https://registry.npmjs.org/@prisma/client/-/client-3.7.0.tgz"
+  "version" "3.7.0"
+  dependencies:
+    "@prisma/engines-version" "3.7.0-31.8746e055198f517658c08a0c426c7eec87f5a85f"
+
+"@prisma/engines-version@3.7.0-31.8746e055198f517658c08a0c426c7eec87f5a85f":
+  "integrity" "sha512-+qx2b+HK7BKF4VCa0LZ/t1QCXsu6SmvhUQyJkOD2aPpmOzket4fEnSKQZSB0i5tl7rwCDsvAiSeK8o7rf+yvwg=="
+  "resolved" "https://registry.npmjs.org/@prisma/engines-version/-/engines-version-3.7.0-31.8746e055198f517658c08a0c426c7eec87f5a85f.tgz"
+  "version" "3.7.0-31.8746e055198f517658c08a0c426c7eec87f5a85f"
+
+"@prisma/engines@3.7.0-31.8746e055198f517658c08a0c426c7eec87f5a85f":
+  "integrity" "sha512-W549ub5NlgexNhR8EFstA/UwAWq3Zq0w9aNkraqsozVCt2CsX+lK4TK7IW5OZVSnxHwRjrgEAt3r9yPy8nZQRg=="
+  "resolved" "https://registry.npmjs.org/@prisma/engines/-/engines-3.7.0-31.8746e055198f517658c08a0c426c7eec87f5a85f.tgz"
+  "version" "3.7.0-31.8746e055198f517658c08a0c426c7eec87f5a85f"
+
 "@shopify/admin-graphql-api-utilities@^1.0.1":
   "integrity" "sha512-OrFBuoErgnh0SvhaT5sNVqoUbvLo6A5CJe5nv5ly7TyAgl/rRXDwAzMcZsqiQxxLFiB4q6En4HqaQI2UHyhtmw=="
   "resolved" "https://registry.npmjs.org/@shopify/admin-graphql-api-utilities/-/admin-graphql-api-utilities-1.0.1.tgz"
@@ -2079,6 +2096,13 @@
     "colorette" "^1.2.2"
     "nanoid" "^3.1.23"
     "source-map" "^0.6.1"
+
+"prisma@*", "prisma@^3.7.0":
+  "integrity" "sha512-pzgc95msPLcCHqOli7Hnabu/GRfSGSUWl5s2P6N13T/rgMB+NNeKbxCmzQiZT2yLOeLEPivV6YrW1oeQIwJxcg=="
+  "resolved" "https://registry.npmjs.org/prisma/-/prisma-3.7.0.tgz"
+  "version" "3.7.0"
+  dependencies:
+    "@prisma/engines" "3.7.0-31.8746e055198f517658c08a0c426c7eec87f5a85f"
 
 "process-nextick-args@~2.0.0":
   "integrity" "sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag=="

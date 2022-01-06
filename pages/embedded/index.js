@@ -12,7 +12,6 @@ import {
   TextContainer,
   Heading,
 } from "@shopify/polaris";
-import {} from "@shopify/polaris";
 import { useEffect, useState } from "react";
 import { authenticatedFetch } from "@shopify/app-bridge-utils";
 import { useAppBridge } from "@shopify/app-bridge-react";
@@ -25,7 +24,8 @@ export default function Index() {
   useEffect(async () => {
     const response = await authenticatedFetch(app)("/api/products");
     const { body } = await response.json();
-    setProducts(body.products);
+    setProducts(body.data.products.edges);
+    console.log(body.data.products.edges[0].node.title);
   }, []);
 
   return (
@@ -67,14 +67,19 @@ export default function Index() {
 
         <Layout.Section>
           <Card>
-            {/* <ResourceList
-              title="List of Products"
-              resourceName={{singular: 'product', plural: 'products'}}
+            <ResourceList
+              title='List of Products'
+              resourceName={{ singular: "product", plural: "products" }}
               items={products}
               renderItem={(item) => {
-                const {id, onlineStoreUrl, title, featuredImage, vendor} = item;
-                const media = <Thumbnail source={featuredImage ? featuredImage.src : ''} alt={featuredImage ? featuredImage.alt : ''} />;
-
+                const { id, onlineStoreUrl, title, featuredImage, vendor } =
+                  item.node;
+                const media = (
+                  <Thumbnail
+                    source={featuredImage ? featuredImage.src : ""}
+                    alt={featuredImage ? featuredImage.alt : ""}
+                  />
+                );
                 return (
                   <ResourceItem
                     id={id}
@@ -83,13 +88,13 @@ export default function Index() {
                     accessibilityLabel={`View details for ${title}`}
                   >
                     <h3>
-                      <TextStyle variation="strong">{title}</TextStyle>
+                      <TextStyle variation='strong'>{title}</TextStyle>
                     </h3>
                     <div>{vendor}</div>
                   </ResourceItem>
                 );
               }}
-            /> */}
+            />
           </Card>
         </Layout.Section>
 
