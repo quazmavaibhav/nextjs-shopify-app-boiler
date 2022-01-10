@@ -7,7 +7,7 @@ export default ShopifyAuth({
     // This might occur during the first deploy to Vercel when you don't yet know
     // what domain your app is being hosted on
     Shopify.Context.update({
-      HOST_NAME: "https://8a5c-2405-201-300b-e820-1099-e773-eaab-12e8.ngrok.io",
+      HOST_NAME: process.env.HOST,
     });
 
     const response = await Shopify.Webhooks.Registry.register({
@@ -34,16 +34,13 @@ export default ShopifyAuth({
 
     // Create a new client for the specified shop.
     const client = new Shopify.Clients.Rest(session.shop, session.accessToken);
-    console.log(session.accessToken);
-    // const client = new Shopify.Clients.Rest(
-    //   "kadwey-store-new.myshopify.com",
-    //   accessToken
-    // );
 
     const body = {
       script_tag: {
         event: "onload",
-        src: "https://8a5c-2405-201-300b-e820-1099-e773-eaab-12e8.ngrok.io/scripts/firstScript.js",
+        src: "https://nextjs-shopify-app-boiler.vercel.app/scripts/firstScript.js",
+        display_scope: "all",
+        cache: "true",
       },
     };
     const data = await client.post({
@@ -51,6 +48,10 @@ export default ShopifyAuth({
       data: body,
       type: DataType.JSON,
     });
+    // const data = await client.delete({
+    //   path: "script_tags/178871468093",
+    // });
+    console.log(data);
 
     // // Redirect to app with shop parameter upon auth
     // ctx.redirect(`/?shop=${shop}&host=${host}`);

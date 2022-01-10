@@ -5,7 +5,7 @@ export default async (req, res) => {
   // This might occur during the first deploy to Vercel when you don't yet know
   // what domain your app is being hosted on
   Shopify.Context.update({
-    HOST_NAME: "https://8a5c-2405-201-300b-e820-1099-e773-eaab-12e8.ngrok.io",
+    HOST_NAME: process.env.HOST,
   });
 
   const session = await Shopify.Utils.loadCurrentSession(req, res);
