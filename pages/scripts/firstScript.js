@@ -1,4 +1,4 @@
 const FirstTag = () => {
-  console.log("Hello world....This is first script tag");
+  return <div>hello world</div>;
 };
 export default FirstTag;
