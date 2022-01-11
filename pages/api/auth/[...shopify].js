@@ -35,22 +35,42 @@ export default ShopifyAuth({
     // Create a new client for the specified shop.
     const client = new Shopify.Clients.Rest(session.shop, session.accessToken);
 
-    const body = {
+    const scriptTag_1_body = {
       script_tag: {
         event: "onload",
         src: "https://nextjs-shopify-app-boiler.vercel.app/scripts/firstScript.js",
         display_scope: "all",
       },
     };
-    const data = await client.post({
+    const scriptTag_1 = await client.post({
       path: "script_tags",
-      data: body,
+      data: scriptTag_1_body,
       type: DataType.JSON,
     });
-    console.log(data);
-    // const data2 = await client.delete({
-    //   path: "script_tags/178881069117",
-    // });
+
+    const scriptTag_2_body = {
+      script_tag: {
+        event: "onload",
+        src: "https://nextjs-shopify-app-boiler.vercel.app/scripts/secondScript.js",
+        display_scope: "all",
+      },
+    };
+
+    const scriptTag_2 = await client.post({
+      path: "script_tags",
+      data: scriptTag_2_body,
+      type: DataType.JSON,
+    });
+
+    const data2 = await client.delete({
+      path: "script_tags/178882150461",
+    });
+    const data3 = await client.delete({
+      path: "script_tags/178884018237",
+    });
+    const data4 = await client.delete({
+      path: "script_tags/178933661757",
+    });
 
     // const products = await client.get({
     //   path: "script_tags",
