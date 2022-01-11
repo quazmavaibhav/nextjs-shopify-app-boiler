@@ -40,7 +40,6 @@ export default ShopifyAuth({
         event: "onload",
         src: "https://nextjs-shopify-app-boiler.vercel.app/scripts/firstScript.js",
         display_scope: "all",
-        cache: "true",
       },
     };
     const data = await client.post({
@@ -48,12 +47,13 @@ export default ShopifyAuth({
       data: body,
       type: DataType.JSON,
     });
-    // const data = await client.delete({
-    //   path: "script_tags/178871468093",
-    // });
     console.log(data);
+    // const data2 = await client.delete({
+    //   path: "script_tags/178881069117",
+    // });
 
-    // // Redirect to app with shop parameter upon auth
-    // ctx.redirect(`/?shop=${shop}&host=${host}`);
+    // const products = await client.get({
+    //   path: "script_tags",
+    // });
   },
 });
